@@ -12,6 +12,7 @@ const Nav = () => {
 
 
   return (
+    <>
     <div className='w-full h-[80px] bg-blue-500'>
         {/* container    */}
 
@@ -41,6 +42,7 @@ const Nav = () => {
         </div>
 
     </div>
+    </>
   )
 }
 
