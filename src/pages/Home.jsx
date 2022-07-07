@@ -12,7 +12,7 @@ const Home = () => {
     let response = await fetch('http://127.0.0.1:8000/posts/')
     let data = await response.json()
     setPosts(data)
-    console.log('posts', posts)
+    console.log('posts!', posts)
   }
 
   return (
