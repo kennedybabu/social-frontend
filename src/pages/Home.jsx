@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Post from '../components/Post'
 
 const Home = () => {
 
@@ -18,6 +19,9 @@ const Home = () => {
   return (
     <div>
         <h2>Home Page</h2>
+        {posts.map((post) => {
+          return <Post  title={post.title} body={post.body} key={post.id} />
+        })}
 
     </div>
   )
