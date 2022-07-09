@@ -1,11 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Post = ({title, body}) => {
+const Post = ({post}) => {
   return (
-    <div>
-        <h4>{title}</h4>
-        <p>{body}</p>        
-    </div>
+    <Link to={`/post/${post.id}`}>
+        <h4>{post.title}</h4>
+    </Link>
   )
 }
 
