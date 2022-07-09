@@ -1,4 +1,7 @@
 import React, {useState, useEffect} from 'react'
+import {BsArrowLeftCircleFill} from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+
 
 const PostPage = ({ match }) => {
     let postId = match.params.id
@@ -20,6 +23,9 @@ const PostPage = ({ match }) => {
 
   return (
     <div>
+        <Link to='/'>
+            <h3><BsArrowLeftCircleFill /></h3>
+        </Link>
         <p>{post?.body}</p>
     </div>
   )
