@@ -1,16 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import Post from '../components/Post'
+// import PostPage from '../components/PostPage'
 
 const Home = () => {
 
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    getNotes()
+    getPosts()
   }, [])
 
-  let getNotes = async () => {
-    let response = await fetch('http://127.0.0.1:8000/posts/')
+  let getPosts = async () => {
+    let response = await fetch('/posts/posts/')
     let data = await response.json()
     setPosts(data)
     console.log('posts!', posts)
@@ -18,9 +19,8 @@ const Home = () => {
 
   return (
     <div>
-        <h2>Home Page</h2>
-        {posts.map((post) => {
-          return <Post  title={post.title} body={post.body} key={post.id} />
+        {posts.map((post, index) => {
+          return <Post post={post} key={index}/>
         })}
 
     </div>
